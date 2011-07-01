@@ -2,9 +2,6 @@ package br.snt.app.commands.clicks;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
 import br.snt.app.activities.StatisticsActivity;
 import br.snt.app.commands.Command;
 
@@ -18,26 +15,19 @@ import br.snt.app.commands.Command;
 public class ClickStatisticsButtonCommand implements Command {
 
 	/**
-	 * Activity used to start the {@link StatisticsActivity}.
+	 * The parent activity used to start the {@link StatisticsActivity} calling
+	 * startActivity() method.
 	 */
 	private Activity mActivity;
 	
 	/**
-	 * Button to be clicked.
-	 */
-	private Button mStatisticsButton;
-
-	/**
 	 * Default constructor.
 	 * 
-	 * @param activity Activity used to start the {@link StatisticsActivity}.
-	 * @param button Button to be clicked.
+	 * @param activity
+	 *            Activity used to start the {@link StatisticsActivity}.
 	 */
-	public ClickStatisticsButtonCommand(Activity activity, Button button) {
+	public ClickStatisticsButtonCommand(Activity activity) {
 		mActivity = activity;
-		mStatisticsButton = button;
-		
-		setOnClickListener();
 	}
 	
 	/* (non-Javadoc)
@@ -47,16 +37,5 @@ public class ClickStatisticsButtonCommand implements Command {
 	public void execute() {
 		Intent intent = new Intent(mActivity, StatisticsActivity.class);
 		mActivity.startActivity(intent);	
-	}
-	
-	/**
-	 * Sets the OnClickListener event for this button.
-	 */
-	private void setOnClickListener() {
-		mStatisticsButton.setOnClickListener(new OnClickListener() {
-			public void onClick(View v) {
-				execute();
-			}
-		});
 	}
 }

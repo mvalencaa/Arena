@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ContextMenu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ContextMenu.ContextMenuInfo;
@@ -15,7 +16,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 
 /**
@@ -27,8 +27,14 @@ import android.widget.AdapterView.AdapterContextMenuInfo;
  */
 public class BibleActivity extends Activity {
 
+	/**
+	 * View used to show all verses of the book and chapter choosed.
+	 */
 	private ListView mVerses;
-	
+
+	/**
+	 * View used to show all books.
+	 */
 	private Spinner mSpinnerBooks;
 
 	/** Called when the activity is first created. */
@@ -86,28 +92,30 @@ public class BibleActivity extends Activity {
 	}
 
 	@Override
-	public void onCreateContextMenu(ContextMenu verseContextMenu, View bibleView,
-			ContextMenuInfo menuInfo) {
+	public void onCreateContextMenu(ContextMenu verseContextMenu,
+			View bibleView, ContextMenuInfo menuInfo) {
 		super.onCreateContextMenu(verseContextMenu, bibleView, menuInfo);
-		verseContextMenu.setHeaderTitle("Capítulo 1:2");
-		verseContextMenu.add("Marcar");
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.verse_item_context_menu, verseContextMenu);
+		// verseContextMenu.setHeaderTitle("Capítulo 1:2");
 	}
 
 	@Override
 	public boolean onContextItemSelected(MenuItem item) {
-	  AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
-//	  switch (item.getItemId()) {
-//	  case R.id.:
-//	    editNote(info.id);
-//	    return true;
-//	  case R.id.delete:
-//	    deleteNote(info.id);
-//	    return true;
-//	  default:
-//	    return super.onContextItemSelected(item);
-//	  }
-	  Log.i("\n\n\nTESTE: ", "" + item.getTitle());
-	  
-	  return true;
+		AdapterContextMenuInfo info = (AdapterContextMenuInfo) item
+				.getMenuInfo();
+		Log.i("\n\n\nTESTE: ", "" + item.getTitle());
+		switch (item.getItemId()) {
+		case R.id.verse_item_context_menu_note:
+			// editNote(info.id);
+			return true;
+		case R.id.verse_item_context_menu_mark:
+			// deleteNote(info.id);
+			return true;
+		case R.id.verse_item_context_menu_tweet:
+			return true;
+		default:
+			return super.onContextItemSelected(item);
+		}
 	}
 }

@@ -2,9 +2,6 @@ package br.snt.app.commands.clicks;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
 import br.snt.app.activities.PartnersOfGodActivity;
 import br.snt.app.commands.Command;
 
@@ -18,28 +15,19 @@ import br.snt.app.commands.Command;
 public class ClickPartnersOfGodCommand implements Command {
 
 	/**
-	 * Activity used to start the {@link PartnersOfGodActivity}.
+	 * The parent activity used to start the {@link PartnersOfGodActivity}
+	 * calling startActivity() method.
 	 */
 	private Activity mActivity;
-
-	/**
-	 * Button to be clicked.
-	 */
-	private Button mPartnersOfGodButton;
 
 	/**
 	 * Default constructor.
 	 * 
 	 * @param activity
 	 *            Activity used to start the {@link PartnersOfGodActivity}.
-	 * @param button
-	 *            Button to be clicked.
 	 */
-	public ClickPartnersOfGodCommand(Activity activity, Button button) {
+	public ClickPartnersOfGodCommand(Activity activity) {
 		mActivity = activity;
-		mPartnersOfGodButton = button;
-
-		setOnClickListener();
 	}
 
 	/*
@@ -51,16 +39,5 @@ public class ClickPartnersOfGodCommand implements Command {
 	public void execute() {
 		Intent intent = new Intent(mActivity, PartnersOfGodActivity.class);
 		mActivity.startActivity(intent);
-	}
-
-	/**
-	 * Sets the OnClickListener event for this button.
-	 */
-	private void setOnClickListener() {
-		mPartnersOfGodButton.setOnClickListener(new OnClickListener() {
-			public void onClick(View v) {
-				execute();
-			}
-		});
 	}
 }

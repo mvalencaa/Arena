@@ -2,9 +2,6 @@ package br.snt.app.commands.clicks;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
 import br.snt.app.activities.AnnotationsActivity;
 import br.snt.app.activities.MainActivity;
 import br.snt.app.commands.Command;
@@ -19,24 +16,19 @@ import br.snt.app.commands.Command;
 public class ClickAnnotationsButtonCommand implements Command {
 	
 	/**
-	 * Activity used to start the {@link AnnotationsActivity}.
+	 * The parent activity used to start the {@link AnnotationsActivity} calling
+	 * startActivity() method.
 	 */
 	private Activity mActivity;
 	
 	/**
-	 * Button to be clicked.
+	 * Default constructor.
+	 * 
+	 * @param activity
+	 *            Activity used to start the {@link AnnotationsActivity}.
 	 */
-	private Button mAnnotationsButton;
-
-	/**
-	 * @param mainActivity
-	 * @param findViewById
-	 */
-	public ClickAnnotationsButtonCommand(MainActivity activity, Button button) {
+	public ClickAnnotationsButtonCommand(MainActivity activity) {
 		mActivity = activity;
-		mAnnotationsButton = button;
-		
-		setOnClickListener();
 	}
 
 	/*
@@ -48,16 +40,5 @@ public class ClickAnnotationsButtonCommand implements Command {
 	public void execute() {
 		Intent intent = new Intent(mActivity, AnnotationsActivity.class);
 		mActivity.startActivity(intent);
-	}
-
-	/**
-	 * Sets the OnClickListener event for this button.
-	 */
-	private void setOnClickListener() {
-		mAnnotationsButton.setOnClickListener(new OnClickListener() {
-			public void onClick(View v) {
-				execute();
-			}
-		});
 	}
 }
