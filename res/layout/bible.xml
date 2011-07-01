@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	android:id="@+id/bible_screen"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent">
+	
+	<LinearLayout
+		android:id="@+id/linearLayout_spinners"
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content">
+		<Spinner 
+	        android:id="@+id/spinner_books"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:minWidth="239dip"
+	        android:prompt="@string/books_prompt"/>
+	    <Spinner 
+	        android:id="@+id/spinner_chapters"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:prompt="@string/chapters_prompt"/>
+    </LinearLayout>
+	
+	<ListView
+		android:id="@+id/listView_verses"
+		android:layout_height="match_parent"
+		android:layout_width="match_parent">
+	</ListView>
+</LinearLayout>

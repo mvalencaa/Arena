@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TableLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:stretchColumns="0,1"
+    android:shrinkColumns="0,1"
+    android:gravity="center">
+    <!-- android:background="@drawable/in_pacto"> -->
+    <TableRow>
+	    <Button
+	    	android:id="@+id/bible_button"
+	    	android:layout_width="0dip"
+	    	android:layout_height="100dip"
+	    	android:layout_weight="1"
+	        android:padding="10dp"
+	        android:text="Bíblia"/>
+		<Button
+	    	android:id="@+id/annotations_button"
+	        android:layout_width="0dip"
+	        android:layout_height="100dip"
+	        android:layout_weight="1"
+	        android:padding="10dp"
+	        android:text="Anotações"/>
+	</TableRow>
+	
+	<TableRow>
+	    <Button
+	    	android:id="@+id/tenth_button"
+	        android:layout_width="0dip"
+	        android:layout_height="100dip"
+	        android:layout_weight="1"
+	        android:padding="10dp"
+	        android:text="Dízimo"/>
+	    <Button
+	    	android:id="@+id/partners_of_god_button"
+	        android:layout_width="0dip"
+	        android:layout_height="100dip"
+	        android:layout_weight="1"
+	        android:padding="10dp"
+	        android:text="Parceiros de Deus"/>
+	</TableRow>
+	
+	<TableRow>
+		<Button
+	    	android:id="@+id/statistic_button"
+	        android:layout_width="0dip"
+	        android:layout_height="100dip"
+	        android:layout_weight="1"
+	        android:padding="10dp"
+	        android:text="Estatísticas"/>
+		<Button
+	    	android:id="@+id/about_button"
+	        android:layout_width="0dip"
+	        android:layout_height="100dip"
+	        android:layout_weight="1"
+	        android:padding="10dp"
+	        android:text="Sobre"/>
+	        <!-- android:background="@drawable/about_button"-->
+	</TableRow>
+</TableLayout>

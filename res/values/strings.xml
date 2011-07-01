@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- Main Application -->
+    <string name="app_name">Arena</string>
+
+	<!-- Bible -->
+    <string name="bible_title">Arena - Bíblia</string>
+    <string name="books_prompt">Selecione um livro</string>
+   	<string name="chapters_prompt">Escolha um capítulo</string>
+    <string-array name="books_array">
+    	<!-- Old Testament -->
+        <item>Gênesis</item>
+        <item>Êxodo</item>
+        <item>Levítico</item>
+        <item>Números</item>
+        <item>Deuteronômio</item>
+        <item>Josué</item>
+        <item>Juízes</item>
+        <item>Rute</item>
+        <item>1 Samuel</item>
+        <item>2 Samuel</item>
+        <item>1 Reis</item>
+        <item>2 Reis</item>
+        <item>1 Crônicas</item>
+        <item>2 Crônicas</item>
+        <item>Esdras</item>
+        <item>Neemias</item>
+        <item>Ester</item>
+        <item>Jó</item>
+        <item>Salmos</item>
+        <item>Provérbios</item>
+        <item>Eclesiastes</item>
+        <item>Cânticos</item>
+        <item>Isaías</item>
+        <item>Jeremias</item>
+        <item>Lamentações</item>
+        <item>Ezequiel</item>
+        <item>Daniel</item>
+        <item>Oséias</item>
+        <item>Joel</item>
+        <item>Amós</item>
+        <item>Obadias</item>
+        <item>Jonas</item>
+        <item>Miquéias</item>
+        <item>Naum</item>
+        <item>Habacuque</item>
+        <item>Sofonias</item>
+        <item>Ageu</item>
+        <item>Zacarias</item>
+        <item>Malaquias</item>
+        <!-- New Testament -->
+        <item>Mateus</item>
+        <item>Marcos</item>
+        <item>Lucas</item>
+        <item>João</item>
+        <item>Atos</item>
+        <item>Romanos</item>
+        <item>1 Coríntios</item>
+        <item>2 Coríntios</item>
+        <item>Gálatas</item>
+        <item>Efésios</item>
+        <item>Filipenses</item>
+        <item>Colossenses</item>
+        <item>1 Tessalonicenses</item>
+        <item>2 Tessalonicenses</item>
+        <item>1 Timóteo</item>
+        <item>2 Timóteo</item>
+        <item>Tito</item>
+        <item>Filemom</item>
+        <item>Hebreus</item>
+        <item>Tiago</item>
+        <item>1 Pedro</item>
+        <item>2 Pedro</item>
+        <item>1 João</item>
+        <item>2 João</item>
+        <item>3 João</item>
+        <item>Judas</item>
+        <item>Apocalípse</item>
+    </string-array>
+    
+    <!-- Statistics -->
+	<string name="statistics_title">Arena - Estatísticas</string>
+    <string name="statistics_message">Tela das estatísticas.</string>
+	
+	<!-- About -->
+	<string name="about_title">Sobre</string>
+	<string name="about_version"><b>Versão:</b> 0.0.1.</string>
+	<string name="about_description"><b>Descrição:</b> Programa para gerenciamento cristão.</string>
+	<string name="about_author"><b>Autor:</b> Marcelo Valença.</string>
+	<string name="about_author_twitter"><b>Siga-me no twitter:</b> @mvalencaa.</string>
+	<string name="about_author_contact"><b>Contato:</b> mvalencaa@gmail.com</string>
+	
+	<!-- Annotations -->
+	<string name="annotations_title">Arena - Anotações</string>
+	<string name="annotations_message">Tela das anotações.</string>
+	
+	<!-- Tenth -->
+	<string name="tenth_title">Arena - Dízimo</string>
+	<string name="tenth_message">Tela dos dízimos.</string>
+	
+	<!-- Partners of God -->
+	<string name="partners_of_god_title">Arena - Parceiros de Deus</string>
+	<string name="partners_of_god_message">Tela do Parceiros de Deus.</string>
+	  
+</resources>
