@@ -12,7 +12,7 @@ import br.snt.app.commands.Command;
  * @since 01/07/2011
  * 
  */
-public class ClickPartnersOfGodCommand implements Command {
+public class OpenPartnersOfGodActivityCmd implements Command {
 
 	/**
 	 * The parent activity used to start the {@link PartnersOfGodActivity}
@@ -26,7 +26,7 @@ public class ClickPartnersOfGodCommand implements Command {
 	 * @param activity
 	 *            Activity used to start the {@link PartnersOfGodActivity}.
 	 */
-	public ClickPartnersOfGodCommand(Activity activity) {
+	public OpenPartnersOfGodActivityCmd(Activity activity) {
 		mActivity = activity;
 	}
 

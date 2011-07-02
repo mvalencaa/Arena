@@ -6,7 +6,6 @@ import java.util.List;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.ContextMenu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -17,6 +16,9 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 import android.widget.AdapterView.AdapterContextMenuInfo;
+import br.snt.app.commands.Command;
+import br.snt.app.commands.clicks.AddNoteToVerseCmd;
+import br.snt.app.commands.clicks.MarkVerseItemCmd;
 
 /**
  * Represents the bible's main screen.
@@ -104,13 +106,15 @@ public class BibleActivity extends Activity {
 	public boolean onContextItemSelected(MenuItem item) {
 		AdapterContextMenuInfo info = (AdapterContextMenuInfo) item
 				.getMenuInfo();
-		Log.i("\n\n\nTESTE: ", "" + item.getTitle());
 		switch (item.getItemId()) {
 		case R.id.verse_item_context_menu_note:
-			// editNote(info.id);
+			Command clickNotes = new AddNoteToVerseCmd(this);
+			clickNotes.execute();
 			return true;
 		case R.id.verse_item_context_menu_mark:
-			// deleteNote(info.id);
+			Command clickMarkVerseItem = new MarkVerseItemCmd(
+					info.targetView);
+			clickMarkVerseItem.execute();
 			return true;
 		case R.id.verse_item_context_menu_tweet:
 			return true;

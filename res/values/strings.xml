@@ -79,9 +79,12 @@
     </string-array>
     
     <!-- Verse Context Menu -->
-    <string name = "verse_item_context_menu_note">Nota</string>
-    <string name = "verse_item_context_menu_mark">Marcar</string>
-    <string name = "verse_item_context_menu_tweet">Twittar</string>
+    <string name="verse_item_context_menu_note">Nota</string>
+    <string name="verse_item_context_menu_mark">Marcar</string>
+    <string name="verse_item_context_menu_tweet">Twittar</string>
+    
+    <!-- Notes -->
+    <string name="notes_title">Arena - Notas</string>
     
     <!-- Statistics -->
 	<string name="statistics_title">Arena - Estatísticas</string>

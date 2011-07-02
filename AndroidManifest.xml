@@ -30,6 +30,9 @@
                   android:label="@string/about_title"
                   android:theme="@android:style/Theme.Dialog">
         </activity>
+        <activity android:name=".NotesActivity"
+                  android:label="@string/notes_title">
+        </activity>
     </application>
     <uses-sdk android:minSdkVersion="8" />
 

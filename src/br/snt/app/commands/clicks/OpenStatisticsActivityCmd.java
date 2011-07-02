@@ -12,7 +12,7 @@ import br.snt.app.commands.Command;
  * @since 29/06/2011
  *
  */
-public class ClickStatisticsButtonCommand implements Command {
+public class OpenStatisticsActivityCmd implements Command {
 
 	/**
 	 * The parent activity used to start the {@link StatisticsActivity} calling
@@ -26,7 +26,7 @@ public class ClickStatisticsButtonCommand implements Command {
 	 * @param activity
 	 *            Activity used to start the {@link StatisticsActivity}.
 	 */
-	public ClickStatisticsButtonCommand(Activity activity) {
+	public OpenStatisticsActivityCmd(Activity activity) {
 		mActivity = activity;
 	}
 	

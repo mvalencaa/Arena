@@ -12,7 +12,7 @@ import br.snt.app.commands.Command;
  * @since 29/06/2011
  * 
  */
-public class ClickAboutButtonCommand implements Command {
+public class OpenAboutActivityCmd implements Command {
 
 	/**
 	 * The parent activity used to start the {@link AboutActivity} calling
@@ -26,7 +26,7 @@ public class ClickAboutButtonCommand implements Command {
 	 * @param activity
 	 *            Activity used to start the {@link AboutActivity}.
 	 */
-	public ClickAboutButtonCommand(Activity activity) {
+	public OpenAboutActivityCmd(Activity activity) {
 		mActivity = activity;
 	}
 

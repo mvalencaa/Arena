@@ -6,12 +6,12 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import br.snt.app.commands.Command;
-import br.snt.app.commands.clicks.ClickAboutButtonCommand;
-import br.snt.app.commands.clicks.ClickAnnotationsButtonCommand;
-import br.snt.app.commands.clicks.ClickBibleButtonCommand;
-import br.snt.app.commands.clicks.ClickPartnersOfGodCommand;
-import br.snt.app.commands.clicks.ClickStatisticsButtonCommand;
-import br.snt.app.commands.clicks.ClickTenthButtonCommand;
+import br.snt.app.commands.clicks.OpenAboutActivityCmd;
+import br.snt.app.commands.clicks.OpenAnnotationsActivityCmd;
+import br.snt.app.commands.clicks.OpenBibleActivityCmd;
+import br.snt.app.commands.clicks.OpenPartnersOfGodActivityCmd;
+import br.snt.app.commands.clicks.OpenStatisticsActivityCmd;
+import br.snt.app.commands.clicks.OpenTenthActivityCmd;
 
 /**
  * Represents the arena's main screen.
@@ -69,7 +69,7 @@ public class MainActivity extends Activity {
 		mBibleButton = (Button) findViewById(R.id.bible_button);
 		mBibleButton.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				Command bibleClickCommand = new ClickBibleButtonCommand(
+				Command bibleClickCommand = new OpenBibleActivityCmd(
 						MainActivity.this);
 				bibleClickCommand.execute();
 			}
@@ -78,7 +78,7 @@ public class MainActivity extends Activity {
 		mAnnotationsButton = (Button) findViewById(R.id.annotations_button);
 		mAnnotationsButton.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				Command annotationsClickCommand = new ClickAnnotationsButtonCommand(
+				Command annotationsClickCommand = new OpenAnnotationsActivityCmd(
 						MainActivity.this);
 				annotationsClickCommand.execute();
 			}
@@ -87,7 +87,7 @@ public class MainActivity extends Activity {
 		mTenthButton = (Button) findViewById(R.id.tenth_button);
 		mTenthButton.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				Command tenthClickCommand = new ClickTenthButtonCommand(
+				Command tenthClickCommand = new OpenTenthActivityCmd(
 						MainActivity.this);
 				tenthClickCommand.execute();
 			}
@@ -96,7 +96,7 @@ public class MainActivity extends Activity {
 		mPartnersOfGodButton = (Button) findViewById(R.id.partners_of_god_button);
 		mPartnersOfGodButton.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				Command partnersOfGodClickCommand = new ClickPartnersOfGodCommand(
+				Command partnersOfGodClickCommand = new OpenPartnersOfGodActivityCmd(
 						MainActivity.this);
 				partnersOfGodClickCommand.execute();
 			}
@@ -105,7 +105,7 @@ public class MainActivity extends Activity {
 		mStatisticsButton = (Button) findViewById(R.id.statistic_button);
 		mStatisticsButton.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				Command statisticsClickCommand = new ClickStatisticsButtonCommand(
+				Command statisticsClickCommand = new OpenStatisticsActivityCmd(
 						MainActivity.this);
 				statisticsClickCommand.execute();
 			}
@@ -114,7 +114,7 @@ public class MainActivity extends Activity {
 		mAboutButton = (Button) findViewById(R.id.about_button);
 		mAboutButton.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				Command aboutClickCommand = new ClickAboutButtonCommand(
+				Command aboutClickCommand = new OpenAboutActivityCmd(
 						MainActivity.this);
 				aboutClickCommand.execute();
 			}
