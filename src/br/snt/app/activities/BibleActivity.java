@@ -17,7 +17,7 @@ import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import br.snt.app.commands.Command;
-import br.snt.app.commands.clicks.AddNoteToVerseCmd;
+import br.snt.app.commands.clicks.OpenNoteActivityCmd;
 import br.snt.app.commands.clicks.MarkVerseItemCmd;
 
 /**
@@ -108,7 +108,7 @@ public class BibleActivity extends Activity {
 				.getMenuInfo();
 		switch (item.getItemId()) {
 		case R.id.verse_item_context_menu_note:
-			Command clickNotes = new AddNoteToVerseCmd(this);
+			Command clickNotes = new OpenNoteActivityCmd(this);
 			clickNotes.execute();
 			return true;
 		case R.id.verse_item_context_menu_mark:

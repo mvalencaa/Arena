@@ -12,7 +12,7 @@ import br.snt.app.commands.Command;
  * @since 01/07/2011
  *
  */
-public class AddNoteToVerseCmd implements Command {
+public class OpenNoteActivityCmd implements Command {
 
 	/**
 	 * The parent activity used to start the {@link NotesActivity} calling
@@ -26,7 +26,7 @@ public class AddNoteToVerseCmd implements Command {
 	 * @param activity
 	 *            Activity used to start the {@link NotesActivity}.
 	 */
-	public AddNoteToVerseCmd(Activity activity) {
+	public OpenNoteActivityCmd(Activity activity) {
 		mActivity = activity;
 	}
 	

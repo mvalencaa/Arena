@@ -85,6 +85,8 @@
     
     <!-- Notes -->
     <string name="notes_title">Arena - Notas</string>
+    <string name="notes_add_title">Arena - Adicionar Nota</string>
+    <string name="notes_add_menu">Adicionar</string>
     
     <!-- Statistics -->
 	<string name="statistics_title">Arena - Estatísticas</string>

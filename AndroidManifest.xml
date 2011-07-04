@@ -33,6 +33,9 @@
         <activity android:name=".NotesActivity"
                   android:label="@string/notes_title">
         </activity>
+        <activity android:name=".AddNoteActivity"
+                  android:label="@string/notes_add_title">
+        </activity>
     </application>
     <uses-sdk android:minSdkVersion="8" />
 
