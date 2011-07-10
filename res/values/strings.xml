@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<!-- Main Application -->
-    <string name="app_name">Arena</string>
+    <string name="app_name">Arena Mobile</string>
 
 	<!-- Bible -->
-    <string name="bible_title">Arena - Bíblia</string>
+    <string name="bible_title">Arena Mobile - Bíblia</string>
     <string name="books_prompt">Selecione um livro</string>
    	<string name="chapters_prompt">Escolha um capítulo</string>
     <string-array name="books_array">
@@ -84,12 +84,12 @@
     <string name="verse_item_context_menu_tweet">Twittar</string>
     
     <!-- Notes -->
-    <string name="notes_title">Arena - Notas</string>
-    <string name="notes_add_title">Arena - Adicionar Nota</string>
+    <string name="notes_title">Arena Mobile - Notas</string>
+    <string name="notes_add_title">Arena Mobile - Adicionar Nota</string>
     <string name="notes_add_menu">Adicionar</string>
     
     <!-- Statistics -->
-	<string name="statistics_title">Arena - Estatísticas</string>
+	<string name="statistics_title">Arena Mobile - Estatísticas</string>
     <string name="statistics_message">Tela das estatísticas.</string>
 	
 	<!-- About -->
@@ -101,15 +101,15 @@
 	<string name="about_author_contact"><b>Contato:</b> mvalencaa@gmail.com</string>
 	
 	<!-- Annotations -->
-	<string name="annotations_title">Arena - Anotações</string>
+	<string name="annotations_title">Arena Mobile - Anotações</string>
 	<string name="annotations_message">Tela das anotações.</string>
 	
 	<!-- Tenth -->
-	<string name="tenth_title">Arena - Dízimo</string>
+	<string name="tenth_title">Arena Mobile - Dízimo</string>
 	<string name="tenth_message">Tela dos dízimos.</string>
 	
 	<!-- Partners of God -->
-	<string name="partners_of_god_title">Arena - Parceiros de Deus</string>
+	<string name="partners_of_god_title">Arena Mobile - Parceiros de Deus</string>
 	<string name="partners_of_god_message">Tela do Parceiros de Deus.</string>
 	  
 </resources>

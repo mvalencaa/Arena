@@ -7,8 +7,9 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
+import br.snt.app.R;
+import br.snt.app.commands.AddNoteCmd;
 import br.snt.app.commands.Command;
-import br.snt.app.commands.clicks.AddNoteCmd;
 
 /**
  * Represents a note click on the verse from the context menu.

@@ -1,10 +1,9 @@
-package br.snt.app.commands.clicks;
+package br.snt.app.commands;
 
 import android.app.Activity;
 import android.content.Intent;
 import br.snt.app.activities.AnnotationsActivity;
 import br.snt.app.activities.MainActivity;
-import br.snt.app.commands.Command;
 
 /**
  * Represents a click on the annotations button.

@@ -1,9 +1,8 @@
-package br.snt.app.commands.clicks;
+package br.snt.app.commands;
 
 import android.app.Activity;
 import android.content.Intent;
 import br.snt.app.activities.BibleActivity;
-import br.snt.app.commands.Command;
 
 /**
  * Represents a click on the bible button.

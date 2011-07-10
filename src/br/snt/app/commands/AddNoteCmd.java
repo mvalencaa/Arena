@@ -1,10 +1,9 @@
-package br.snt.app.commands.clicks;
+package br.snt.app.commands;
 
 import android.app.Activity;
 import android.content.Intent;
 import br.snt.app.activities.AddNoteActivity;
 import br.snt.app.activities.NotesActivity;
-import br.snt.app.commands.Command;
 
 /**
  * Represents an add click on the verse from the add note menu.

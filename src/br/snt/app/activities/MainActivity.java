@@ -5,13 +5,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import br.snt.app.R;
 import br.snt.app.commands.Command;
-import br.snt.app.commands.clicks.OpenAboutActivityCmd;
-import br.snt.app.commands.clicks.OpenAnnotationsActivityCmd;
-import br.snt.app.commands.clicks.OpenBibleActivityCmd;
-import br.snt.app.commands.clicks.OpenPartnersOfGodActivityCmd;
-import br.snt.app.commands.clicks.OpenStatisticsActivityCmd;
-import br.snt.app.commands.clicks.OpenTenthActivityCmd;
+import br.snt.app.commands.OpenAboutActivityCmd;
+import br.snt.app.commands.OpenAnnotationsActivityCmd;
+import br.snt.app.commands.OpenBibleActivityCmd;
+import br.snt.app.commands.OpenPartnersOfGodActivityCmd;
+import br.snt.app.commands.OpenStatisticsActivityCmd;
+import br.snt.app.commands.OpenTenthActivityCmd;
 
 /**
  * Represents the arena's main screen.

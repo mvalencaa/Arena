@@ -1,7 +1,6 @@
-package br.snt.app.commands.clicks;
+package br.snt.app.commands;
 
 import android.app.Activity;
-import br.snt.app.commands.Command;
 
 /**
  * Represents a cancel operation.

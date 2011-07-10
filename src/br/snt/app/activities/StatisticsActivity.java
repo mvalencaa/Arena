@@ -2,6 +2,7 @@ package br.snt.app.activities;
 
 import android.app.Activity;
 import android.os.Bundle;
+import br.snt.app.R;
 
 /**
  * Represents the statistics's main screen.

@@ -1,8 +1,7 @@
-package br.snt.app.commands.clicks;
+package br.snt.app.commands;
 
 import android.app.Activity;
 import android.util.Log;
-import br.snt.app.commands.Command;
 
 /**
  * Represents a save note operation.

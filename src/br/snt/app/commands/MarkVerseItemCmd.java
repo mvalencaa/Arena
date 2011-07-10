@@ -1,8 +1,7 @@
-package br.snt.app.commands.clicks;
+package br.snt.app.commands;
 
 import android.graphics.Color;
 import android.view.View;
-import br.snt.app.commands.Command;
 
 /**
  * Represents a mark click on the verse from the context menu.

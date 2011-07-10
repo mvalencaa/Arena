@@ -1,39 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="br.snt.app.activities"
+      package="br.snt.app"
       android:versionCode="1"
       android:versionName="1.0">
     <application android:icon="@drawable/bible_button_pressed" android:label="@string/app_name">
-        <activity android:name=".MainActivity"
+    	
+    	<provider android:name=".providers.VerseProvider"
+          android:authorities="br.snt.app.providers.VerseProvider"/>
+          
+        <activity android:name=".activities.MainActivity"
                   android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".BibleActivity"
+        <activity android:name=".activities.BibleActivity"
                   android:label="@string/bible_title">
         </activity>
-        <activity android:name=".AnnotationsActivity"
+        <activity android:name=".activities.AnnotationsActivity"
                   android:label="@string/annotations_title">
         </activity>
-        <activity android:name=".StatisticsActivity"
+        <activity android:name=".activities.StatisticsActivity"
                   android:label="@string/statistics_title">
         </activity>
-        <activity android:name=".TenthActivity"
+        <activity android:name=".activities.TenthActivity"
                   android:label="@string/tenth_title">
         </activity>
-        <activity android:name=".PartnersOfGodActivity"
+        <activity android:name=".activities.PartnersOfGodActivity"
                   android:label="@string/partners_of_god_title">
         </activity>
-        <activity android:name=".AboutActivity"
+        <activity android:name=".activities.AboutActivity"
                   android:label="@string/about_title"
                   android:theme="@android:style/Theme.Dialog">
         </activity>
-        <activity android:name=".NotesActivity"
+        <activity android:name=".activities.NotesActivity"
                   android:label="@string/notes_title">
         </activity>
-        <activity android:name=".AddNoteActivity"
+        <activity android:name=".activities.AddNoteActivity"
                   android:label="@string/notes_add_title">
         </activity>
     </application>

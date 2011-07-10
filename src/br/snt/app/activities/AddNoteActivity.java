@@ -5,9 +5,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import br.snt.app.R;
+import br.snt.app.commands.CancelCmd;
 import br.snt.app.commands.Command;
-import br.snt.app.commands.clicks.CancelCmd;
-import br.snt.app.commands.clicks.SaveNoteCmd;
+import br.snt.app.commands.SaveNoteCmd;
 
 /**
  * Represents an add note click on the verse from the context menu.
