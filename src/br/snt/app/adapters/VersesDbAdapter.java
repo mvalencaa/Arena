@@ -22,7 +22,7 @@ public class VersesDbAdapter {
 	public static final String KEY_TEXT = "text";
 	public static final String KEY_MARKED = "marked";
 
-	private static final String TAG = "VersesDbAdapter";
+//	private static final String TAG = "VersesDbAdapter";
 	private SQLiteDatabase mDb;
 
 	private static final String DATABASE_TABLE = "verses";
@@ -118,9 +118,21 @@ public class VersesDbAdapter {
 	}
 
 	// Refatorar!
-	public Cursor fetchAllVersesByChapter(int chapter) {
+	public Cursor fetchAllVersesByBookAndChapter(int book_id, int chapter) {
 		Cursor cursor = mDb.query(true, DATABASE_TABLE, null, KEY_BOOK_ID + "="
-				+ chapter, null, null, null, null, null);
+				+ (book_id + 1) + " AND " + KEY_CHAPTER + "=" + (chapter + 1), null, null,
+				null, null, null);
+
+		if (cursor != null) {
+			cursor.moveToFirst();
+		}
+
+		return cursor;
+	}
+
+	public Cursor fetchAllChaptersByBook(int book_id) {
+		Cursor cursor = mDb.query(true, DATABASE_TABLE, null, KEY_BOOK_ID + "="
+				+ (book_id + 1), null, KEY_CHAPTER, null, null, null);
 
 		if (cursor != null) {
 			cursor.moveToFirst();
@@ -142,10 +154,12 @@ public class VersesDbAdapter {
 	 *            value to set note body to
 	 * @return true if the note was successfully updated, false otherwise
 	 */
-	public boolean updateVerse(long rowId, int marked) {
+	public boolean updateVerse(int book_id, int chapter, int number, int marked) {
 		ContentValues args = new ContentValues();
 		args.put(KEY_MARKED, marked);
 
-		return mDb.update(DATABASE_TABLE, args, KEY_ID + "=" + rowId, null) > 0;
+		return mDb.update(DATABASE_TABLE, args, KEY_BOOK_ID + "="
+				+ (book_id + 1) + " AND " + KEY_CHAPTER + "=" + (chapter + 1)
+				+ " AND " + KEY_NUMBER + "=" + (number + 1), null) > 0;
 	}
 }

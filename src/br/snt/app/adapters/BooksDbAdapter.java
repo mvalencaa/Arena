@@ -13,15 +13,78 @@ import android.database.sqlite.SQLiteDatabase;
  * 
  */
 public class BooksDbAdapter {
+	
+	public static final int GENESIS = 0; //Voltar pra 1!
+	public static final int EXODUS = 1;
+	public static final int LEVITICUS = 2;
+	public static final int NUMBERS = 3;
+	public static final int DEUTERONOMY = 4;
+	public static final int JOSHUA = 5;
+	public static final int JUDGES = 6;
+	public static final int RUTH = 7;
+	public static final int SAMUEL_1 = 8;
+	public static final int SAMUEL_2 = 9;
+	public static final int KINGS_1 = 10;
+	public static final int KINGS_2 = 11;
+	public static final int CHRONICLES_1 = 12;
+	public static final int CHRONICLES_2 = 13;
+	public static final int EZRA = 14;
+	public static final int NEHEMIAH = 15;
+	public static final int ESTHER = 16;
+	public static final int JOB = 17;
+	public static final int PSALMS = 18;
+	public static final int PROVERBS = 19;
+	public static final int ECCLESIASTES = 20;
+	public static final int SONG_OF_SONGS = 21;
+	public static final int ISAIAH = 22;
+	public static final int JEREMIAH = 23;
+	public static final int LAMENTATIONS = 24;
+	public static final int EZEKIEL = 25;
+	public static final int DANIEL = 26;
+	public static final int HOSEA = 27;
+	public static final int JOEL = 28;
+	public static final int AMOS = 29;
+	public static final int OBADIAH = 30;
+	public static final int JONAH = 31;
+	public static final int MICAH = 32;
+	public static final int NAHUM = 33;
+	public static final int HABAKKUK = 34;
+	public static final int ZEPHANIAH = 35;
+	public static final int HAGGAI = 36;
+	public static final int ZECHARIAH = 37;
+	public static final int MALACHI = 38;
+	public static final int MATTHEW = 39;
+	public static final int MARK = 40;
+	public static final int LUKE = 41;
+	public static final int JOHN = 42;
+	public static final int ATOS = 43;
+	public static final int ROMAN = 44;
+	public static final int CORINTHIANS_1 = 45;
+	public static final int CORINTHIANS_2 = 46;
+	public static final int GALATIANS = 47;
+	public static final int EPHESIANS = 48;
+	public static final int PHILIPPIANS = 49;
+	public static final int COLOSSIANS = 50;
+	public static final int THESSALONIANS_1 = 51;
+	public static final int THESSALONIANS_2 = 52;
+	public static final int TIMOTHY_1 = 53;
+	public static final int TIMOTHY_2 = 54;
+	public static final int TITUS = 55;
+	public static final int PHILEMON = 56;
+	public static final int HEBREWS = 57;
+	public static final int JAMES = 58;
+	public static final int PETER_1 = 59;
+	public static final int PETER_2 = 60;
+	public static final int JOHN_1 = 61;
+	public static final int JOHN_2 = 62;
+	public static final int JOHN_3 = 63;
+	public static final int JUDE = 64;
+	public static final int REVELATION = 65;
 
 	public static final String KEY_ID = "_id";
-	public static final String KEY_BOOK_ID = "book_id";
-	public static final String KEY_CHAPTER = "chapter";
-	public static final String KEY_NUMBER = "number";
-	public static final String KEY_TEXT = "text";
-	public static final String KEY_MARKED = "marked";
+	public static final String KEY_TITLE = "title";
 
-	private static final String TAG = "BooksDbAdapter";
+//	private static final String TAG = "BooksDbAdapter";
 	private SQLiteDatabase mDb;
 
 	private static final String DATABASE_TABLE = "books";
