@@ -171,9 +171,7 @@ public class BibleActivity extends ListActivity {
 			Command clickMarkVerseItem = new MarkVerseItemCmd(info.targetView);
 			clickMarkVerseItem.execute();
 
-			mVersesDbAdapter.updateVerse(mSpinnerBooks
-					.getSelectedItemPosition(), mSpinnerChapters
-					.getSelectedItemPosition(), info.position, 1);
+			mVersesDbAdapter.updateVerse(info.id, 1);
 
 			return true;
 

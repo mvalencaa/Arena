@@ -154,12 +154,11 @@ public class VersesDbAdapter {
 	 *            value to set note body to
 	 * @return true if the note was successfully updated, false otherwise
 	 */
-	public boolean updateVerse(int book_id, int chapter, int number, int marked) {
+	public boolean updateVerse(long rowId, int marked) {
 		ContentValues args = new ContentValues();
 		args.put(KEY_MARKED, marked);
 
-		return mDb.update(DATABASE_TABLE, args, KEY_BOOK_ID + "="
-				+ (book_id + 1) + " AND " + KEY_CHAPTER + "=" + (chapter + 1)
-				+ " AND " + KEY_NUMBER + "=" + (number + 1), null) > 0;
+		return mDb.update(DATABASE_TABLE, args, KEY_ID + "="
+				+ rowId, null) > 0;
 	}
 }
