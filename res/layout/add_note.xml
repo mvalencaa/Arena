@@ -20,6 +20,7 @@
 		android:gravity="bottom">
 		<Button
 			android:id="@+id/cancel_note_button"
+			android:drawableLeft="@android:drawable/ic_menu_close_clear_cancel"
 			android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:layout_weight="1"
@@ -27,6 +28,7 @@
 			android:text="Cancelar"/>
 		<Button
 			android:id="@+id/save_note_button"
+			android:drawableLeft="@android:drawable/ic_menu_save"
 			android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:layout_weight="1"

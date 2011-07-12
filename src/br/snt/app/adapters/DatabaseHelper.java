@@ -35,10 +35,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	private static final String BOOKS_DATABASE_CREATE = "CREATE TABLE books "
 			+ "(_id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT);";
 
+	/**
+	 * 
+	 * @param context
+	 */
 	private DatabaseHelper(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
 	}
 	
+	/**
+	 * 
+	 * @param context
+	 * @return
+	 */
 	public static DatabaseHelper getInstance(Context context) {
 		if(mInstance == null) {
 			mInstance = new DatabaseHelper(context);

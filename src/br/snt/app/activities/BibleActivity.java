@@ -35,6 +35,9 @@ public class BibleActivity extends ListActivity {
 	 */
 	private Spinner mSpinnerBooks;
 
+	/**
+	 * View used to show all chapters of a book.
+	 */
 	private Spinner mSpinnerChapters;
 
 	private DatabaseHelper mDbHelper;
@@ -66,6 +69,7 @@ public class BibleActivity extends ListActivity {
 		int[] to = new int[] { android.R.id.text1 };
 
 		Cursor cursor = mBooksDbAdapter.fetchAllBooks();
+		startManagingCursor(cursor);
 
 		SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,
 				android.R.layout.simple_spinner_item, cursor, from, to);
@@ -94,9 +98,9 @@ public class BibleActivity extends ListActivity {
 		String[] from = new String[] { VersesDbAdapter.KEY_CHAPTER };
 		int[] to = new int[] { android.R.id.text1 };
 
-		// Como parametrizar?
 		Cursor cursor = mVersesDbAdapter
 				.fetchAllChaptersByBook(BooksDbAdapter.GENESIS);
+		startManagingCursor(cursor);
 
 		SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,
 				android.R.layout.simple_spinner_item, cursor, from, to);
@@ -133,7 +137,7 @@ public class BibleActivity extends ListActivity {
 
 		Cursor cursor = mVersesDbAdapter.fetchAllVersesByBookAndChapter(
 				book_id, chapter);
-		// startManagingCursor(cursor);
+		startManagingCursor(cursor);
 
 		SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,
 				R.layout.verse_item, cursor, from, to);
