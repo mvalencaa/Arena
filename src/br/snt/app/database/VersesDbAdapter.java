@@ -1,7 +1,7 @@
 /**
  * 
  */
-package br.snt.app.adapters;
+package br.snt.app.database;
 
 import android.content.ContentValues;
 import android.database.Cursor;

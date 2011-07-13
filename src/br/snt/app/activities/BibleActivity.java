@@ -14,12 +14,12 @@ import android.widget.Spinner;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.AdapterView.OnItemSelectedListener;
 import br.snt.app.R;
-import br.snt.app.adapters.BooksDbAdapter;
-import br.snt.app.adapters.DatabaseHelper;
-import br.snt.app.adapters.VersesDbAdapter;
 import br.snt.app.commands.Command;
 import br.snt.app.commands.MarkVerseItemCmd;
 import br.snt.app.commands.OpenNoteActivityCmd;
+import br.snt.app.database.BooksDbAdapter;
+import br.snt.app.database.DatabaseHelper;
+import br.snt.app.database.VersesDbAdapter;
 
 /**
  * Represents the bible's main screen.

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package br.snt.app.adapters;
+package br.snt.app.database;
 
 import android.content.Context;
 import android.database.SQLException;
@@ -19,7 +19,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	private static final String TAG = "DatabaseHelper";
 	private static final String DATABASE_NAME = "arena_mobile";
 	private static final int DATABASE_VERSION = 1;
-	
+
 	private static DatabaseHelper mInstance;
 
 	/**
@@ -36,25 +36,32 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			+ "(_id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT);";
 
 	/**
+	 * Notes database creation sql statement
+	 */
+	private static final String NOTES_DATABASE_CREATE = "CREATE TABLE notes "
+			+ "(_id INTEGER PRIMARY KEY AUTOINCREMENT, verse_id INTEGER, "
+			+ "text TEXT, create_date INTEGER, modification_date, INTEGER);";
+
+	/**
 	 * 
 	 * @param context
 	 */
 	private DatabaseHelper(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
 	}
-	
+
 	/**
 	 * 
 	 * @param context
 	 * @return
 	 */
 	public static DatabaseHelper getInstance(Context context) {
-		if(mInstance == null) {
+		if (mInstance == null) {
 			mInstance = new DatabaseHelper(context);
-			
+
 			return mInstance;
 		}
-		
+
 		return mInstance;
 	}
 
@@ -76,6 +83,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	public void onCreate(SQLiteDatabase db) {
 		db.execSQL(VERSES_DATABASE_CREATE);
 		db.execSQL(BOOKS_DATABASE_CREATE);
+		db.execSQL(NOTES_DATABASE_CREATE);
 	}
 
 	@Override
@@ -84,6 +92,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 				+ newVersion + ", which will destroy all old data");
 		db.execSQL("DROP TABLE IF EXISTS verses");
 		db.execSQL("DROP TABLE IF EXISTS books");
+		db.execSQL("DROP TABLE IF EXISTS notes");
 		onCreate(db);
 	}
 }
