@@ -5,20 +5,22 @@
     android:layout_height="match_parent"
     android:stretchColumns="0,1"
     android:shrinkColumns="0,1"
-    android:gravity="center">
-    <!-- android:background="@drawable/in_pacto"> -->
+    android:gravity="center"
+    android:background="@drawable/background">
     <TableRow>
 	    <Button
 	    	android:id="@+id/bible_button"
 	    	android:layout_width="0dip"
-	    	android:layout_height="100dip"
+	    	android:layout_height="match_parent"
 	    	android:layout_weight="1"
 	        android:padding="10dp"
-	        android:text="Bíblia"/>
+	        android:text="Bíblia"
+	        android:background="@android:color/transparent"
+	        android:drawableTop="@drawable/bible_button_drawable"/>
 		<Button
 	    	android:id="@+id/annotations_button"
 	        android:layout_width="0dip"
-	        android:layout_height="100dip"
+	        android:layout_height="match_parent"
 	        android:layout_weight="1"
 	        android:padding="10dp"
 	        android:text="Anotações"/>

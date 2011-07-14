@@ -6,7 +6,7 @@
 	<!-- Bible -->
     <string name="bible_title">Arena Mobile - Bíblia</string>
     <string name="books_prompt">Selecione um livro</string>
-   	<string name="chapters_prompt">Escolha um capítulo</string>
+   	<string name="chapters_prompt">Selecione um capítulo</string>
     
     <!-- Verse Context Menu -->
     <string name="verse_item_context_menu_note">Nota</string>

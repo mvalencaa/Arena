@@ -61,10 +61,9 @@ public class AddNoteActivity extends Activity {
 				Command saveNoteCommand = new SaveNoteCmd(AddNoteActivity.this);
 				saveNoteCommand.execute();
 
-				// Como passar o verse_id?
-				long wasSaved = mNotesDbAdapter
-						.createNote(1, ((EditText) findViewById(R.id.new_note))
-								.getText().toString());
+				long wasSaved = mNotesDbAdapter.createNote(getIntent()
+						.getLongExtra("verse_id", 0), ((EditText) findViewById(R.id.new_note)).getText()
+								.toString());
 
 				if (wasSaved != -1)
 					setResult(RESULT_OK);

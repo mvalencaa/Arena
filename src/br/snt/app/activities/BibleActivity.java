@@ -1,6 +1,7 @@
 package br.snt.app.activities;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -16,7 +17,6 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import br.snt.app.R;
 import br.snt.app.commands.Command;
 import br.snt.app.commands.MarkVerseItemCmd;
-import br.snt.app.commands.OpenNoteActivityCmd;
 import br.snt.app.database.BooksDbAdapter;
 import br.snt.app.database.DatabaseHelper;
 import br.snt.app.database.VersesDbAdapter;
@@ -165,8 +165,9 @@ public class BibleActivity extends ListActivity {
 		switch (item.getItemId()) {
 		case R.id.verse_item_context_menu_note:
 
-			Command clickNotes = new OpenNoteActivityCmd(this);
-			clickNotes.execute();
+			Intent intent = new Intent(this, NotesActivity.class);
+			intent.putExtra("verse_id", info.id);
+			startActivity(intent);
 
 			return true;
 

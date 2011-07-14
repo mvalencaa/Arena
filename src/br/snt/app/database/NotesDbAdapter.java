@@ -110,7 +110,7 @@ public class NotesDbAdapter {
 	 */
 	public Cursor fetchAllNotesByVerseId(long verseId) {
 		return mDb.query(DATABASE_TABLE, null, KEY_VERSE_ID + "=" + verseId,
-				null, null, null, null);
+				null, null, null, KEY_MODIFICATION_DATE);
 	}
 
 	/**

@@ -40,7 +40,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	 */
 	private static final String NOTES_DATABASE_CREATE = "CREATE TABLE notes "
 			+ "(_id INTEGER PRIMARY KEY AUTOINCREMENT, verse_id INTEGER, "
-			+ "text TEXT, create_date INTEGER, modification_date, INTEGER);";
+			+ "text TEXT, create_date INTEGER, modification_date INTEGER);";
 
 	/**
 	 * 

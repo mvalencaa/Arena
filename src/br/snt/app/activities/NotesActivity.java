@@ -10,8 +10,6 @@ import android.view.MenuItem;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 import br.snt.app.R;
-import br.snt.app.commands.AddNoteCmd;
-import br.snt.app.commands.Command;
 import br.snt.app.database.DatabaseHelper;
 import br.snt.app.database.NotesDbAdapter;
 
@@ -52,9 +50,9 @@ public class NotesActivity extends ListActivity {
 	private void showNotes() {
 		String[] from = new String[] { NotesDbAdapter.KEY_TEXT };
 		int[] to = new int[] { R.id.note_text };
-		
-		//TODO Passar o id correto!
-		Cursor cursor = mNotesDbAdapter.fetchAllNotesByVerseId(1);
+
+		Cursor cursor = mNotesDbAdapter.fetchAllNotesByVerseId(getIntent()
+				.getLongExtra("verse_id", 0));
 		startManagingCursor(cursor);
 
 		SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,
@@ -72,8 +70,9 @@ public class NotesActivity extends ListActivity {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		Command addNoteCmd = new AddNoteCmd(this);
-		addNoteCmd.execute();
+		Intent intent = new Intent(this, AddNoteActivity.class);
+		intent.putExtra("verse_id", getIntent().getLongExtra("verse_id", 0));
+		startActivityForResult(intent, NotesActivity.SAVE_BUTTON_PRESSED);
 
 		return super.onOptionsItemSelected(item);
 	}
