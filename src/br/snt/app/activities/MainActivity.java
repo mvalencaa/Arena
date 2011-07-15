@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import br.snt.app.R;
@@ -51,9 +52,16 @@ public class MainActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main);
 
+		initTitleBar();
 		initButtons();
+	}
+	
+	private void initTitleBar() {
+		requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
+		setContentView(R.layout.main);
+		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE,
+				R.layout.title_bar);
 	}
 
 	/**
@@ -64,7 +72,8 @@ public class MainActivity extends Activity {
 		mBibleButton = (Button) findViewById(R.id.bible_button);
 		mBibleButton.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				Intent intent = new Intent(MainActivity.this, BibleActivity.class);
+				Intent intent = new Intent(MainActivity.this,
+						BibleActivity.class);
 				startActivity(intent);
 			}
 		});
@@ -72,7 +81,8 @@ public class MainActivity extends Activity {
 		mAnnotationsButton = (Button) findViewById(R.id.annotations_button);
 		mAnnotationsButton.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				Intent intent = new Intent(MainActivity.this, AnnotationsActivity.class);
+				Intent intent = new Intent(MainActivity.this,
+						AnnotationsActivity.class);
 				startActivity(intent);
 			}
 		});
@@ -80,7 +90,8 @@ public class MainActivity extends Activity {
 		mTenthButton = (Button) findViewById(R.id.tenth_button);
 		mTenthButton.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				Intent intent = new Intent(MainActivity.this, TenthActivity.class);
+				Intent intent = new Intent(MainActivity.this,
+						TenthActivity.class);
 				startActivity(intent);
 			}
 		});
@@ -88,7 +99,8 @@ public class MainActivity extends Activity {
 		mPartnersOfGodButton = (Button) findViewById(R.id.partners_of_god_button);
 		mPartnersOfGodButton.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				Intent intent = new Intent(MainActivity.this, PartnersOfGodActivity.class);
+				Intent intent = new Intent(MainActivity.this,
+						PartnersOfGodActivity.class);
 				startActivity(intent);
 			}
 		});
@@ -96,7 +108,8 @@ public class MainActivity extends Activity {
 		mStatisticsButton = (Button) findViewById(R.id.statistic_button);
 		mStatisticsButton.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				Intent intent = new Intent(MainActivity.this, StatisticsActivity.class);
+				Intent intent = new Intent(MainActivity.this,
+						StatisticsActivity.class);
 				startActivity(intent);
 			}
 		});
@@ -104,7 +117,8 @@ public class MainActivity extends Activity {
 		mAboutButton = (Button) findViewById(R.id.about_button);
 		mAboutButton.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				Intent intent = new Intent(MainActivity.this, AboutActivity.class);
+				Intent intent = new Intent(MainActivity.this,
+						AboutActivity.class);
 				startActivity(intent);
 			}
 		});

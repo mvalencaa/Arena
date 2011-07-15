@@ -7,9 +7,12 @@
     <string name="bible_title">Arena Mobile - Bíblia</string>
     <string name="books_prompt">Selecione um livro</string>
    	<string name="chapters_prompt">Selecione um capítulo</string>
+   	
+   	<!-- Verse Menu -->
+   	<string name="verses_mark_menu">Marcar capítulo como lido</string>
     
     <!-- Verse Context Menu -->
-    <string name="verse_item_context_menu_note">Nota</string>
+    <string name="verse_item_context_menu_note">Notas</string>
     <string name="verse_item_context_menu_mark">Marcar</string>
     <string name="verse_item_context_menu_tweet">Twittar</string>
     

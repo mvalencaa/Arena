@@ -15,7 +15,7 @@ import android.util.Log;
  * 
  */
 public class DatabaseHelper extends SQLiteOpenHelper {
-
+	
 	private static final String TAG = "DatabaseHelper";
 	private static final String DATABASE_NAME = "arena_mobile";
 	private static final int DATABASE_VERSION = 1;
@@ -26,8 +26,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	 * Verses database creation sql statement
 	 */
 	private static final String VERSES_DATABASE_CREATE = "CREATE TABLE verses "
-			+ "(_id INTEGER PRIMARY KEY AUTOINCREMENT, book_id INTEGER,"
-			+ "chapter INTEGER, number INTEGER, text TEXT, marked INTEGER);";
+			+ "(_id INTEGER PRIMARY KEY AUTOINCREMENT, book_id INTEGER, "
+			+ "chapter INTEGER, number INTEGER, text TEXT, marked INTEGER, "
+			+ "read INTEGER);";
 
 	/**
 	 * Books database creation sql statement

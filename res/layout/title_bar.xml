@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/title_bar_title"
+	android:text="@string/app_name"
+	android:textColor="@color/titleTextcolor"
+	android:textStyle="bold"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+   	android:height="100dip"
+   	android:gravity="center_vertical"/>

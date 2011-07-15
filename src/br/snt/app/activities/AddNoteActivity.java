@@ -19,6 +19,12 @@ import br.snt.app.database.NotesDbAdapter;
  */
 public class AddNoteActivity extends Activity {
 
+	/**
+	 * Used to identify that the save button in AddNoteActivity has been
+	 * clicked.
+	 */
+	public static final int SAVE_BUTTON_PRESSED = 0;
+	
 	private Button mCancel;
 
 	private Button mSave;

@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.ContextMenu;
+import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -77,7 +79,7 @@ public class BibleActivity extends ListActivity {
 
 		mSpinnerBooks = (Spinner) findViewById(R.id.spinner_books);
 		mSpinnerBooks.setAdapter(adapter);
-		mSpinnerBooks.setSelection(BooksDbAdapter.GENESIS);
+		mSpinnerBooks.setSelection(BooksDbAdapter.GENESIS - 1);
 
 		mSpinnerBooks.setOnItemSelectedListener(new OnItemSelectedListener() {
 
@@ -146,6 +148,28 @@ public class BibleActivity extends ListActivity {
 	}
 
 	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.verses_menu, menu);
+
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		mVersesDbAdapter.markAsReadAllVersesByChapter(mSpinnerBooks
+				.getSelectedItemId(), mSpinnerChapters
+				.getSelectedItemPosition());
+
+		Log.i("Livro: ", ""
+				+ mSpinnerBooks.getSelectedItemId());
+		Log.i("Capítulo: ", ""
+				+ mSpinnerChapters.getSelectedItemPosition());
+
+		return super.onOptionsItemSelected(item);
+	}
+
+	@Override
 	public void onCreateContextMenu(ContextMenu verseContextMenu,
 			View bibleView, ContextMenuInfo menuInfo) {
 		super.onCreateContextMenu(verseContextMenu, bibleView, menuInfo);
@@ -174,7 +198,7 @@ public class BibleActivity extends ListActivity {
 
 			info.targetView.setBackgroundColor(Color.DKGRAY);
 
-			mVersesDbAdapter.updateVerse(info.id, 1);
+			mVersesDbAdapter.markVerse(info.id, 1);
 
 			return true;
 

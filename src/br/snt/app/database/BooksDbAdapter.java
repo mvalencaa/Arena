@@ -14,20 +14,20 @@ import android.database.sqlite.SQLiteDatabase;
  */
 public class BooksDbAdapter {
 	
-	public static final int GENESIS = 0; //Voltar pra 1!
-	public static final int EXODUS = 1;
-	public static final int LEVITICUS = 2;
-	public static final int NUMBERS = 3;
-	public static final int DEUTERONOMY = 4;
-	public static final int JOSHUA = 5;
-	public static final int JUDGES = 6;
-	public static final int RUTH = 7;
-	public static final int SAMUEL_1 = 8;
-	public static final int SAMUEL_2 = 9;
-	public static final int KINGS_1 = 10;
-	public static final int KINGS_2 = 11;
-	public static final int CHRONICLES_1 = 12;
-	public static final int CHRONICLES_2 = 13;
+	public static final int GENESIS = 1;
+	public static final int EXODUS = 2;
+	public static final int LEVITICUS = 3;
+	public static final int NUMBERS = 4;
+	public static final int DEUTERONOMY = 5;
+	public static final int JOSHUA = 6;
+	public static final int JUDGES = 7;
+	public static final int RUTH = 8;
+	public static final int SAMUEL_1 = 9;
+	public static final int SAMUEL_2 = 10;
+	public static final int KINGS_1 = 11;
+	public static final int KINGS_2 = 12;
+	public static final int CHRONICLES_1 = 13;
+	public static final int CHRONICLES_2 = 14; //Continuar mudando as numeracoes.
 	public static final int EZRA = 14;
 	public static final int NEHEMIAH = 15;
 	public static final int ESTHER = 16;

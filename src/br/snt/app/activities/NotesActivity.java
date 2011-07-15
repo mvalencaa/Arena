@@ -4,9 +4,12 @@ import android.app.ListActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 import br.snt.app.R;
@@ -25,12 +28,6 @@ public class NotesActivity extends ListActivity {
 	private DatabaseHelper mDbHelper;
 
 	private NotesDbAdapter mNotesDbAdapter;
-
-	/**
-	 * Used to identify that the save button in AddNoteActivity has been
-	 * clicked.
-	 */
-	public static final int SAVE_BUTTON_PRESSED = 0;
 
 	/** Called when the activity is first created. */
 	@Override
@@ -72,14 +69,14 @@ public class NotesActivity extends ListActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		Intent intent = new Intent(this, AddNoteActivity.class);
 		intent.putExtra("verse_id", getIntent().getLongExtra("verse_id", 0));
-		startActivityForResult(intent, NotesActivity.SAVE_BUTTON_PRESSED);
+		startActivityForResult(intent, AddNoteActivity.SAVE_BUTTON_PRESSED);
 
 		return super.onOptionsItemSelected(item);
 	}
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		if (requestCode == SAVE_BUTTON_PRESSED) {
+		if (requestCode == AddNoteActivity.SAVE_BUTTON_PRESSED) {
 			if (resultCode == RESULT_OK) {
 				Toast.makeText(getApplicationContext(),
 						"Nota gravada com sucesso.", Toast.LENGTH_SHORT).show();
@@ -88,5 +85,17 @@ public class NotesActivity extends ListActivity {
 						"Falha ao salvar a nota.", Toast.LENGTH_SHORT).show();
 			}
 		}
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see android.app.ListActivity#onListItemClick(android.widget.ListView,
+	 * android.view.View, int, long)
+	 */
+	@Override
+	protected void onListItemClick(ListView l, View v, int position, long id) {
+		Log.i("TESTE", "Funfou!");
+		super.onListItemClick(l, v, position, id);
 	}
 }

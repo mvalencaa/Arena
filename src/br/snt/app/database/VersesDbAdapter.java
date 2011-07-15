@@ -15,14 +15,18 @@ import android.database.sqlite.SQLiteDatabase;
  */
 public class VersesDbAdapter {
 
+	public static final int UNREAD_VERSE = 0;
+	public static final int READ_VERSE = 1;
+
 	public static final String KEY_ID = "_id";
 	public static final String KEY_BOOK_ID = "book_id";
 	public static final String KEY_CHAPTER = "chapter";
 	public static final String KEY_NUMBER = "number";
 	public static final String KEY_TEXT = "text";
 	public static final String KEY_MARKED = "marked";
+	public static final String KEY_READ = "read";
 
-//	private static final String TAG = "VersesDbAdapter";
+	// private static final String TAG = "VersesDbAdapter";
 	private SQLiteDatabase mDb;
 
 	private static final String DATABASE_TABLE = "verses";
@@ -117,11 +121,10 @@ public class VersesDbAdapter {
 		return mCursor;
 	}
 
-	// Refatorar!
 	public Cursor fetchAllVersesByBookAndChapter(int book_id, int chapter) {
 		Cursor cursor = mDb.query(true, DATABASE_TABLE, null, KEY_BOOK_ID + "="
-				+ (book_id + 1) + " AND " + KEY_CHAPTER + "=" + (chapter + 1), null, null,
-				null, null, null);
+				+ book_id + " AND " + KEY_CHAPTER + "=" + (chapter + 1),
+				null, null, null, null, null);
 
 		if (cursor != null) {
 			cursor.moveToFirst();
@@ -132,7 +135,7 @@ public class VersesDbAdapter {
 
 	public Cursor fetchAllChaptersByBook(int book_id) {
 		Cursor cursor = mDb.query(true, DATABASE_TABLE, null, KEY_BOOK_ID + "="
-				+ (book_id + 1), null, KEY_CHAPTER, null, null, null);
+				+ book_id, null, KEY_CHAPTER, null, null, null);
 
 		if (cursor != null) {
 			cursor.moveToFirst();
@@ -154,11 +157,32 @@ public class VersesDbAdapter {
 	 *            value to set note body to
 	 * @return true if the note was successfully updated, false otherwise
 	 */
-	public boolean updateVerse(long rowId, int marked) {
+	public boolean markVerse(long rowId, int marked) {
 		ContentValues args = new ContentValues();
 		args.put(KEY_MARKED, marked);
 
-		return mDb.update(DATABASE_TABLE, args, KEY_ID + "="
-				+ rowId, null) > 0;
+		return mDb.update(DATABASE_TABLE, args, KEY_ID + "=" + rowId, null) > 0;
+	}
+
+	/**
+	 * Update the note using the details provided. The note to be updated is
+	 * specified using the rowId, and it is altered to use the title and body
+	 * values passed in
+	 * 
+	 * @param chapter
+	 *            id of note to update
+	 * @param title
+	 *            value to set note title to
+	 * @param body
+	 *            value to set note body to
+	 * @return true if the note was successfully updated, false otherwise
+	 */
+	public boolean markAsReadAllVersesByChapter(long book_id, int chapter) {
+		ContentValues args = new ContentValues();
+		args.put(KEY_READ, READ_VERSE);
+
+		return mDb.update(DATABASE_TABLE, args, KEY_BOOK_ID + "="
+				+ book_id + " AND " + KEY_CHAPTER + "=" + (chapter + 1),
+				null) > 0;
 	}
 }
