@@ -1,18 +1,12 @@
 package br.snt.app.activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import br.snt.app.R;
-import br.snt.app.commands.Command;
-import br.snt.app.commands.OpenAboutActivityCmd;
-import br.snt.app.commands.OpenAnnotationsActivityCmd;
-import br.snt.app.commands.OpenBibleActivityCmd;
-import br.snt.app.commands.OpenPartnersOfGodActivityCmd;
-import br.snt.app.commands.OpenStatisticsActivityCmd;
-import br.snt.app.commands.OpenTenthActivityCmd;
 
 /**
  * Represents the arena's main screen.
@@ -70,54 +64,48 @@ public class MainActivity extends Activity {
 		mBibleButton = (Button) findViewById(R.id.bible_button);
 		mBibleButton.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				Command bibleClickCommand = new OpenBibleActivityCmd(
-						MainActivity.this);
-				bibleClickCommand.execute();
+				Intent intent = new Intent(MainActivity.this, BibleActivity.class);
+				startActivity(intent);
 			}
 		});
 
 		mAnnotationsButton = (Button) findViewById(R.id.annotations_button);
 		mAnnotationsButton.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				Command annotationsClickCommand = new OpenAnnotationsActivityCmd(
-						MainActivity.this);
-				annotationsClickCommand.execute();
+				Intent intent = new Intent(MainActivity.this, AnnotationsActivity.class);
+				startActivity(intent);
 			}
 		});
 
 		mTenthButton = (Button) findViewById(R.id.tenth_button);
 		mTenthButton.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				Command tenthClickCommand = new OpenTenthActivityCmd(
-						MainActivity.this);
-				tenthClickCommand.execute();
+				Intent intent = new Intent(MainActivity.this, TenthActivity.class);
+				startActivity(intent);
 			}
 		});
 
 		mPartnersOfGodButton = (Button) findViewById(R.id.partners_of_god_button);
 		mPartnersOfGodButton.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				Command partnersOfGodClickCommand = new OpenPartnersOfGodActivityCmd(
-						MainActivity.this);
-				partnersOfGodClickCommand.execute();
+				Intent intent = new Intent(MainActivity.this, PartnersOfGodActivity.class);
+				startActivity(intent);
 			}
 		});
 
 		mStatisticsButton = (Button) findViewById(R.id.statistic_button);
 		mStatisticsButton.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				Command statisticsClickCommand = new OpenStatisticsActivityCmd(
-						MainActivity.this);
-				statisticsClickCommand.execute();
+				Intent intent = new Intent(MainActivity.this, StatisticsActivity.class);
+				startActivity(intent);
 			}
 		});
 
 		mAboutButton = (Button) findViewById(R.id.about_button);
 		mAboutButton.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				Command aboutClickCommand = new OpenAboutActivityCmd(
-						MainActivity.this);
-				aboutClickCommand.execute();
+				Intent intent = new Intent(MainActivity.this, AboutActivity.class);
+				startActivity(intent);
 			}
 		});
 	}

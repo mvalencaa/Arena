@@ -7,9 +7,6 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import br.snt.app.R;
-import br.snt.app.commands.CancelCmd;
-import br.snt.app.commands.Command;
-import br.snt.app.commands.SaveNoteCmd;
 import br.snt.app.database.DatabaseHelper;
 import br.snt.app.database.NotesDbAdapter;
 
@@ -50,19 +47,16 @@ public class AddNoteActivity extends Activity {
 		mCancel = (Button) findViewById(R.id.cancel_note_button);
 		mCancel.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				Command cancelCmd = new CancelCmd(AddNoteActivity.this);
-				cancelCmd.execute();
+				finish();
 			}
 		});
 
 		mSave = (Button) findViewById(R.id.save_note_button);
 		mSave.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				Command saveNoteCommand = new SaveNoteCmd(AddNoteActivity.this);
-				saveNoteCommand.execute();
-
 				long wasSaved = mNotesDbAdapter.createNote(getIntent()
-						.getLongExtra("verse_id", 0), ((EditText) findViewById(R.id.new_note)).getText()
+						.getLongExtra("verse_id", 0),
+						((EditText) findViewById(R.id.new_note)).getText()
 								.toString());
 
 				if (wasSaved != -1)

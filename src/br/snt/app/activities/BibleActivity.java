@@ -3,6 +3,7 @@ package br.snt.app.activities;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.MenuInflater;
@@ -15,8 +16,6 @@ import android.widget.Spinner;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.AdapterView.OnItemSelectedListener;
 import br.snt.app.R;
-import br.snt.app.commands.Command;
-import br.snt.app.commands.MarkVerseItemCmd;
 import br.snt.app.database.BooksDbAdapter;
 import br.snt.app.database.DatabaseHelper;
 import br.snt.app.database.VersesDbAdapter;
@@ -173,8 +172,7 @@ public class BibleActivity extends ListActivity {
 
 		case R.id.verse_item_context_menu_mark:
 
-			Command clickMarkVerseItem = new MarkVerseItemCmd(info.targetView);
-			clickMarkVerseItem.execute();
+			info.targetView.setBackgroundColor(Color.DKGRAY);
 
 			mVersesDbAdapter.updateVerse(info.id, 1);
 
